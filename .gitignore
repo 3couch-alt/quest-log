@@ -1,0 +1,10 @@
+# Original full-size image folders — kept locally, not part of the deployed site
+_original-images/
+
+# The original zip the site arrived in
+quest-log.zip
+
+# OS / editor cruft
+Thumbs.db
+desktop.ini
+.DS_Store
