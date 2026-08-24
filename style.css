@@ -529,6 +529,8 @@ footer {
   align-self: flex-start;
 }
 
+.delete-btn:hover { border-color: #e35d4d; color: #e35d4d; }
+
 /* ---------- Recommend-a-book callout ---------- */
 .recommend-box {
   border: 1px solid var(--border);

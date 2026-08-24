@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Admin — Quest Log</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">Quest<span>Log</span></a>
+    <div class="topbar-nav"><a href="index.html">entries</a></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <article class="post">
+    <div class="post-head">
+      <h1>Comment Admin</h1>
+    </div>
+
+    <div class="post-body">
+      <div id="lockScreen">
+        <p class="comment-status">Enter the admin password to manage comments.</p>
+        <form id="unlockForm" class="comment-form">
+          <input type="password" id="adminPassword" class="search-input" placeholder="Password" required style="margin-bottom:10px;">
+          <button type="submit" class="tag-filter" style="align-self:flex-start; cursor:pointer;">Unlock</button>
+        </form>
+      </div>
+
+      <div id="adminPanel" style="display:none;">
+        <div id="adminList" class="comment-status">Loading comments…</div>
+      </div>
+    </div>
+
+    <a class="back-link" href="index.html">← back to the log</a>
+  </article>
+
+  <footer>QUEST LOG</footer>
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
