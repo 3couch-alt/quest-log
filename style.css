@@ -576,6 +576,16 @@ footer {
 @media (max-width: 560px) {
   .post-cover.inline { float: none; margin: 4px 0 20px; }
 }
+.photo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 4px 0 28px;
+}
+.photo-row .post-cover {
+  margin: 0;
+  max-width: 200px;
+}
 .fave-quote {
   margin: 0 0 36px;
   padding: 14px 18px;
