@@ -583,21 +583,24 @@ footer {
    Narrow screens: a normal centred image in the flow. Wide screens: lifted out
    of the reading column entirely and parked in the empty left margin, so the
    700px measure stays untouched. */
-.hero-comic,
-.hero-side-stack img {
-  display: block;
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  margin: 4px auto 28px;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-}
+/* Narrow screens: a compact wrapping row, so four hero images don't turn into
+   a wall of scrolling before you reach any actual text. */
 .hero-side-stack {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 4px 0 20px;
+}
+.hero-side-stack img {
+  display: block;
+  width: calc(50% - 7px);
+  max-width: 165px;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  object-fit: contain;
+  align-self: flex-start;
 }
 .zoomable {
   cursor: zoom-in;
@@ -649,24 +652,22 @@ footer {
 .lightbox-close:hover { color: var(--gold); border-color: var(--gold); }
 
 @media (min-width: 1300px) {
-  /* .wrap is the positioning context for both margins */
-  .hero-comic,
+  /* Wide screens: one column parked in each empty margin.
+     .wrap is the positioning context. */
   .hero-side-stack {
     position: absolute;
     top: 8px;
+    flex-direction: column;
+    align-items: center;
     width: 230px;
-    max-width: none;
+    gap: 18px;
     margin: 0;
   }
-  .hero-comic { right: calc(100% + 34px); }
-  .hero-side-stack {
-    left: calc(100% + 34px);
-    gap: 18px;
-  }
+  .hero-side-stack.left { right: calc(100% + 34px); }
+  .hero-side-stack.right { left: calc(100% + 34px); }
   .hero-side-stack img {
     width: 100%;
     max-width: none;
-    margin: 0;
   }
 }
 .photo-row {
