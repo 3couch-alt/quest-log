@@ -575,16 +575,32 @@ footer {
   float: right;
   margin: 4px 0 16px 20px;
 }
-.post-cover.inline-left {
-  max-width: 190px;
-  float: left;
-  margin: 4px 22px 16px 0;
-}
-/* the hero comic is tall — keep the search/filter row from wrapping beside it */
-.controls { clear: left; }
 @media (max-width: 560px) {
   .post-cover.inline { float: none; margin: 4px 0 20px; }
-  .post-cover.inline-left { float: none; margin: 4px auto 20px; }
+}
+
+/* ---------- Hero comic ----------
+   Narrow screens: a normal centred image in the flow. Wide screens: lifted out
+   of the reading column entirely and parked in the empty left margin, so the
+   700px measure stays untouched. */
+.hero-comic {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin: 4px auto 28px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+@media (min-width: 1300px) {
+  .hero-comic {
+    position: absolute;
+    top: 8px;
+    right: calc(100% + 34px); /* .wrap is the positioning context */
+    width: 230px;
+    max-width: none;
+    margin: 0;
+  }
 }
 .photo-row {
   display: flex;
@@ -597,7 +613,6 @@ footer {
   max-width: 200px;
 }
 .fave-quote {
-  overflow: hidden; /* keeps the panel beside the floated hero comic, not under it */
   margin: 0 0 36px;
   padding: 14px 18px;
   border-left: 2px solid var(--gold);
