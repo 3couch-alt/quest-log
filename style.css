@@ -596,6 +596,27 @@ footer {
 }
 .recommend-box a.email-link:hover { color: var(--gold); border-color: var(--gold); }
 
+.post-figure {
+  margin: 28px 0;
+  clear: both;
+}
+.post-figure img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.post-figure figcaption {
+  margin-top: 8px;
+  max-width: 420px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted-2);
+}
+
 .post-cover {
   display: block;
   max-width: 240px;
