@@ -573,8 +573,16 @@ footer {
   float: right;
   margin: 4px 0 16px 20px;
 }
+.post-cover.inline-left {
+  max-width: 190px;
+  float: left;
+  margin: 4px 22px 16px 0;
+}
+/* the hero comic is tall — keep the search/filter row from wrapping beside it */
+.controls { clear: left; }
 @media (max-width: 560px) {
   .post-cover.inline { float: none; margin: 4px 0 20px; }
+  .post-cover.inline-left { float: none; margin: 4px auto 20px; }
 }
 .photo-row {
   display: flex;
@@ -587,6 +595,7 @@ footer {
   max-width: 200px;
 }
 .fave-quote {
+  overflow: hidden; /* keeps the panel beside the floated hero comic, not under it */
   margin: 0 0 36px;
   padding: 14px 18px;
   border-left: 2px solid var(--gold);
