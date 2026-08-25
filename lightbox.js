@@ -44,6 +44,8 @@
     lastFocused = img;
     dialogImg.src = img.currentSrc || img.src;
     dialogImg.alt = img.alt;
+    // never blow an image up past its own resolution
+    dialogImg.style.maxWidth = Math.min(760, img.naturalWidth || 760) + 'px';
     dialog.showModal();
     dialog.scrollTop = 0;
   }

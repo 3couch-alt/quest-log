@@ -583,7 +583,8 @@ footer {
    Narrow screens: a normal centred image in the flow. Wide screens: lifted out
    of the reading column entirely and parked in the empty left margin, so the
    700px measure stays untouched. */
-.hero-comic {
+.hero-comic,
+.hero-cover {
   display: block;
   width: 100%;
   max-width: 220px;
@@ -642,14 +643,17 @@ footer {
 .lightbox-close:hover { color: var(--gold); border-color: var(--gold); }
 
 @media (min-width: 1300px) {
-  .hero-comic {
+  /* .wrap is the positioning context for both */
+  .hero-comic,
+  .hero-cover {
     position: absolute;
     top: 8px;
-    right: calc(100% + 34px); /* .wrap is the positioning context */
     width: 230px;
     max-width: none;
     margin: 0;
   }
+  .hero-comic { right: calc(100% + 34px); }
+  .hero-cover { left: calc(100% + 34px); }
 }
 .photo-row {
   display: flex;
