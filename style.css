@@ -584,7 +584,7 @@ footer {
    of the reading column entirely and parked in the empty left margin, so the
    700px measure stays untouched. */
 .hero-comic,
-.hero-cover {
+.hero-side-stack img {
   display: block;
   width: 100%;
   max-width: 220px;
@@ -592,6 +592,12 @@ footer {
   margin: 4px auto 28px;
   border-radius: 4px;
   border: 1px solid var(--border);
+}
+.hero-side-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 }
 .zoomable {
   cursor: zoom-in;
@@ -643,9 +649,9 @@ footer {
 .lightbox-close:hover { color: var(--gold); border-color: var(--gold); }
 
 @media (min-width: 1300px) {
-  /* .wrap is the positioning context for both */
+  /* .wrap is the positioning context for both margins */
   .hero-comic,
-  .hero-cover {
+  .hero-side-stack {
     position: absolute;
     top: 8px;
     width: 230px;
@@ -653,7 +659,15 @@ footer {
     margin: 0;
   }
   .hero-comic { right: calc(100% + 34px); }
-  .hero-cover { left: calc(100% + 34px); }
+  .hero-side-stack {
+    left: calc(100% + 34px);
+    gap: 18px;
+  }
+  .hero-side-stack img {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
 }
 .photo-row {
   display: flex;
