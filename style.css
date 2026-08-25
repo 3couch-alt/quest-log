@@ -478,6 +478,16 @@ footer {
 .author-group-label:first-of-type { margin-top: 4px; }
 
 /* ---------- Ranking page ---------- */
+.rank-nav {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 24px;
+}
+.rank-nav .tag-filter {
+  text-decoration: none;
+  display: inline-block;
+}
+
 .rank-list {
   list-style: none;
   margin: 0;
