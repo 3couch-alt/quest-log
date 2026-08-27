@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>The Game I'm Making — Quest Log</title>
+<meta property="og:site_name" content="Quest Log">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dungeon Crawler Caravan — the game I'm making">
+<meta property="og:description" content="A Vampire Survivors-style crawl with a Dungeon Crawler Carl coat of paint. Fifteen minutes to the win, and then it doesn't stop.">
+<meta property="og:url" content="https://questlogblog.com/game.html">
+<meta property="og:image" content="https://questlogblog.com/images/fantasy-bg.jpg">
+<meta property="og:image:width" content="643">
+<meta property="og:image:height" content="360">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Dungeon Crawler Caravan — the Vampire Survivors-style game I'm building in GameMaker, themed after Dungeon Crawler Carl. What's in it, and how far along it actually is.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">Quest<span>Log</span></a>
+    <div class="topbar-nav">
+      <a href="index.html">entries</a> &nbsp;·&nbsp;
+      <a href="now.html">now</a> &nbsp;·&nbsp;
+      <a href="ranking.html">ranking</a> &nbsp;·&nbsp;
+      <a href="game.html">game</a> &nbsp;·&nbsp;
+      <a href="forum.html">forum</a> &nbsp;·&nbsp;
+      <a href="about.html">about</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <article class="post">
+    <div class="post-head">
+      <div class="post-meta">
+        <span class="wip">◆ IN DEVELOPMENT</span>
+        <span>·</span>
+        <span>GameMaker</span>
+        <span>·</span>
+        <span>a one-man operation</span>
+      </div>
+      <h1>Dungeon Crawler Caravan</h1>
+    </div>
+
+    <div class="post-body">
+      <p>This is the other thing I do when I'm not driving or listening to something. I'm making a game. It runs, it's playable, and it's the first thing I've built that I'd actually let somebody else sit down in front of.</p>
+
+      <p>Short version: it's a <b>Vampire Survivors-style crawl with a Dungeon Crawler Carl coat of paint</b>. You move, your weapons fire themselves, the screen fills up with things trying to kill you, and every level-up hands you three cards and makes you pick one. Fifteen minutes to the win — and then it doesn't stop.</p>
+
+      <!-- Screenshot slot: drop a capture in images/ and swap the src in.
+           Nothing in the game's art folder can go here — see the note further
+           down about the enemy pack's licence. -->
+
+      <h2>Why this, of all things</h2>
+
+      <p><a href="posts/dungeon-crawler-carl.html">Dungeon Crawler Carl</a> is my favorite series on this whole site, and the thing that stuck with me hardest isn't the loot or the levels. It's the System — the way it keeps tightening the screws while narrating your beating back to you like it's entertainment. That's a <i>feeling</i>, and it turns out a Vampire Survivors run is shaped almost exactly right for it. One guy, a horde that never stops arriving, and something out there that finds the whole thing very funny.</p>
+
+      <p>So the run doesn't end when you win. Surviving the full fifteen minutes banks the victory and drops you into <b>overtime</b>, which doesn't end until you die. Stopping a run at the exact moment your build finally comes online is the one thing that wastes the build — so instead the clock goes amber and the brakes come off.</p>
+
+      <div class="note"><span class="tag">[The joke escalates with the threat]</span> After the two scheduled bosses, they just keep coming, and they get named instead of numbered. First "TWO WATCHERS". Then "A CONCERNING NUMBER OF WATCHERS". Then "MANAGEMENT".</div>
+
+      <h2>What's actually in it</h2>
+
+      <div class="spec-grid">
+        <div class="spec"><span class="spec-num">7</span><span class="spec-label">characters, one innate ability each</span></div>
+        <div class="spec"><span class="spec-num">9</span><span class="spec-label">auto-firing weapons, six equip slots</span></div>
+        <div class="spec"><span class="spec-num">9</span><span class="spec-label">evolutions, each behind its own passive</span></div>
+        <div class="spec"><span class="spec-num">3</span><span class="spec-label">mythics, offered rather than given</span></div>
+        <div class="spec"><span class="spec-num">5</span><span class="spec-label">regions on an endless map</span></div>
+        <div class="spec"><span class="spec-num">15</span><span class="spec-label">minutes to the win, then forever</span></div>
+      </div>
+
+      <p>The stuff I'm happiest with, in no real order:</p>
+
+      <ul class="book-list">
+        <li><b>Nine weapons against six slots.</b> You never get to carry the whole set, so what you leave behind is a decision instead of a shopping list.</li>
+        <li><b>Every passive gates exactly one evolution.</b> That was the fix for a real problem — two of the passives used to gate nothing, which made them the only cards on a level-up screen that couldn't be part of a plan.</li>
+        <li><b>The mythics come with a Take It / Leave It prompt</b>, because they're decisions, not pickups. One of them is <i>x100 damage dealt, and you take double</i>. It either wins the run or ends it inside ten seconds.</li>
+        <li><b>Two enemies exist purely to break the pattern.</b> The Brute winds up, flashes white, and commits to a dash it can't re-aim — so you leave the lane instead of out-damaging it. The Sapper is fragile, fast, and detonates on death across faction lines, so one killed in the middle of the horde does your work for you and one killed at your feet does not.</li>
+        <li><b>The floor remembers.</b> Every death leaves a stain in that creature's own blood colour and every bomb leaves a scorch. At overtime crowd sizes, clean ground is the loudest possible signal that nothing you're doing has any weight.</li>
+        <li><b>Ruined villages that stay put.</b> Roughly one chunk in seven is a village, hashed off its own coordinates — walk away, come back, the same houses are standing in the same places.</li>
+        <li><b>Birds that leave when you walk at them.</b> They can't be hurt and they do nothing. That's the point: a bird standing still is set dressing, a bird that takes off because of you is the world reacting, which is most of what "alive" means in a game that otherwise only reacts by attacking.</li>
+      </ul>
+
+      <h2>Where it's actually at</h2>
+
+      <p>Honest answer: the whole thing runs end to end, and almost none of it has been properly played.</p>
+
+      <p><b>Balance is untested.</b> I've done a tuning pass, but it came off the numbers — nobody has sat down and played the characters against each other for real. The escalation curve past the win is completely unplayed. The crowd ceiling is 900 enemies, and that's a guess at what the machine can push, not anything I measured.</p>
+
+      <p>There's a debug overlay on F1 with the frame rate on it, and that's the first number I'll be watching in a late overtime crowd. If it can't hold, the ceiling comes down.</p>
+
+      <div class="note"><span class="tag">[Known rough edge]</span> You can't currently stop at the win. Surviving fifteen minutes banks it, but the only way out is dying or quitting from the pause menu. It needs a "claim victory" option instead of falling straight through into overtime.</div>
+
+      <h2>Under the hood, briefly</h2>
+
+      <p>GameMaker, pure GML, no shaders and no engine plugins. Native resolution is 640x360, upscaled to whatever whole multiple fits your display, because pixel art at a fractional scale looks like garbage.</p>
+
+      <p>The lighting is a light map built on a surface each frame and multiplied over the finished picture — the torch you carry, plus fire, explosions, lightning, orbitals, chests and bosses all casting their own colour. Everything that could be data <i>is</i> data: characters, abilities, weapons and upgrades all live in tables, so adding a new one touches no object code.</p>
+
+      <h2>Why there's nothing to look at yet</h2>
+
+      <p>The enemy art is from a pack whose licence says I can't redistribute it, which is why the project repo is private and why this page is currently all words and no pictures. Screenshots of my own work are coming as soon as I've got frames worth showing.</p>
+
+      <div class="recommend-box">
+        <h3>Want to yell at me about it?</h3>
+        <p>If you play this kind of thing — Vampire Survivors, Brotato, Halls of Torment — and you've got opinions about what makes a run feel good, I'd genuinely like to hear them. Same address as the book recommendations.</p>
+        <a class="email-link" href="mailto:selloutcubicle@gmail.com?subject=Dungeon%20Crawler%20Caravan">selloutcubicle@gmail.com</a>
+      </div>
+
+      <p>I'll keep this page updated as it changes. In the meantime the <a href="index.html">entries</a> are still the main event around here.</p>
+    </div>
+
+    <a class="back-link" href="index.html">← back to the log</a>
+  </article>
+
+  <footer>QUEST LOG · <a href="mailto:selloutcubicle@gmail.com?subject=Book%20Recommendation%20for%20Quest%20Log">Recommend a book</a></footer>
+</div>
+
+<script src="player.js"></script>
+
+</body>
+</html>
