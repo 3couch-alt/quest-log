@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>The Game I'm Making — Quest Log</title>
+<meta property="og:site_name" content="Quest Log">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dungeon Crawler Caravan — the game I'm making">
+<meta property="og:description" content="A Vampire Survivors-style crawl with a Dungeon Crawler Carl coat of paint. Fifteen minutes to the win, and then it doesn't stop.">
+<meta property="og:url" content="https://questlogblog.com/game.html">
+<meta property="og:image" content="https://questlogblog.com/images/fantasy-bg.jpg">
+<meta property="og:image:width" content="643">
+<meta property="og:image:height" content="360">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Dungeon Crawler Caravan — the Vampire Survivors-style game I'm building in GameMaker, themed after Dungeon Crawler Carl. What's in it, and how far along it actually is.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">Quest<span>Log</span></a>
+    <div class="topbar-nav">
+      <a href="index.html">entries</a> &nbsp;·&nbsp;
+      <a href="now.html">now</a> &nbsp;·&nbsp;
+      <a href="ranking.html">ranking</a> &nbsp;·&nbsp;
+      <a href="game.html">game</a> &nbsp;·&nbsp;
+      <a href="forum.html">forum</a> &nbsp;·&nbsp;
+      <a href="about.html">about</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <article class="post">
+    <div class="post-head">
+      <div class="post-meta">
+        <span class="wip">◆ IN DEVELOPMENT</span>
+        <span>·</span>
+        <span>GameMaker</span>
+        <span>·</span>
+        <span>a one-man operation</span>
+      </div>
+      <h1>Dungeon Crawler Caravan</h1>
+    </div>
+
+    <div class="post-body">
+      <p>Short version: a <b>Vampire Survivors-style crawl with a Dungeon Crawler Carl coat of paint</b>. You move, your weapons fire themselves, the screen fills up with things trying to kill you, and every level-up hands you three cards and makes you pick one.</p>
+
+      <!-- Screenshot slot: drop a capture in images/ and swap the src in.
+           Nothing from the game's art folder can go here — the enemy pack's
+           licence forbids redistributing it. -->
+
+      <h2>The idea</h2>
+
+      <p>What stuck with me about <a href="posts/dungeon-crawler-carl.html">Dungeon Crawler Carl</a> isn't the loot or the levels — it's the System tightening the screws while narrating your beating back to you like it's entertainment. So the run doesn't end when you win it. Surviving fifteen minutes banks the victory and drops you into <b>overtime</b>, which doesn't stop until you're dead, and the bosses stop being numbered and start being named: "TWO WATCHERS", then "A CONCERNING NUMBER OF WATCHERS", then "MANAGEMENT".</p>
+
+      <h2>What's in it right now</h2>
+
+      <div class="spec-grid">
+        <div class="spec"><span class="spec-num">7</span><span class="spec-label">characters, one innate ability each</span></div>
+        <div class="spec"><span class="spec-num">9</span><span class="spec-label">auto-firing weapons, six equip slots</span></div>
+        <div class="spec"><span class="spec-num">9</span><span class="spec-label">evolutions, each behind its own passive</span></div>
+        <div class="spec"><span class="spec-num">3</span><span class="spec-label">mythics, offered rather than given</span></div>
+        <div class="spec"><span class="spec-num">5</span><span class="spec-label">regions on an endless map</span></div>
+        <div class="spec"><span class="spec-num">15</span><span class="spec-label">minutes to the win, then forever</span></div>
+      </div>
+
+      <ul class="book-list">
+        <li>Nine weapons against six slots, so what you leave behind is a decision.</li>
+        <li>Every passive gates exactly one evolution, so no pick is filler.</li>
+        <li>Mythics come with a Take It / Leave It prompt. One of them is <i>x100 damage dealt, and you take double</i>.</li>
+        <li>Bosses on the clock at five and ten minutes, then encore bosses that never stop.</li>
+        <li>Ruined villages that stay put — walk away, come back, the same houses are standing.</li>
+        <li>Per-character records: best time, kills and level.</li>
+      </ul>
+
+      <p>One of the seven is my sticker guy. Protente is a satyr, his ability is <b>Scream</b> — two seconds of stun on everything in earshot — and he's the most fragile character in the game. No more warm hugs, exactly as advertised.</p>
+
+      <div class="photo-row">
+        <img class="post-cover" src="images/prepotente.jpg" alt="Screaming goat sticker in armor, holding a soda bottle, with a red and yellow lightning background">
+        <img class="post-cover" src="images/prepotente-2.jpg" alt="Circular goat sticker reading 'There will be no more warm hugs from me'">
+      </div>
+
+      <h2>Where it's at</h2>
+
+      <p>It runs end to end, and almost none of it has been properly played. The balance came off the numbers rather than off play, the escalation past the win is entirely untested, and the 900-enemy crowd ceiling is a guess at what the machine can push. No screenshots yet either — the enemy art is from a pack I can't redistribute, which is why that repo is private.</p>
+
+      <div class="recommend-box">
+        <h3>Played this kind of thing?</h3>
+        <p>Vampire Survivors, Brotato, Halls of Torment — if you've got opinions about what makes a run feel good, I want them.</p>
+        <a class="email-link" href="mailto:selloutcubicle@gmail.com?subject=Dungeon%20Crawler%20Caravan">selloutcubicle@gmail.com</a>
+      </div>
+    </div>
+
+    <a class="back-link" href="index.html">← back to the log</a>
+  </article>
+
+  <footer>QUEST LOG · <a href="mailto:selloutcubicle@gmail.com?subject=Book%20Recommendation%20for%20Quest%20Log">Recommend a book</a></footer>
+</div>
+
+<script src="player.js"></script>
+
+</body>
+</html>
