@@ -6,7 +6,9 @@
      - if the track file is missing, the control never appears at all
      - the on/off choice is remembered across pages */
 
-  var TRACK = 'audio/lofi.mp3';
+  // mp3 first: Safari (macOS and iOS) does not play Ogg Vorbis, so an mp3
+  // is preferred whenever one is present.
+  var TRACKS = ['audio/lofi.mp3', 'audio/lofi.ogg'];
   var KEY = 'ql_music_on';
   var VOLUME = 0.35;
 
@@ -15,9 +17,9 @@
 
   // Posts live one level down, so resolve the path from the site root.
   var depth = window.location.pathname.replace(/[^/]+$/, '').split('/').filter(Boolean).length;
-  var src = (depth > 0 ? '../'.repeat(depth) : '') + TRACK;
+  var prefix = depth > 0 ? '../'.repeat(depth) : '';
 
-  function build() {
+  function build(src) {
     var audio = document.createElement('audio');
     audio.src = src;
     audio.loop = true;
@@ -64,8 +66,13 @@
     }
   }
 
-  // Only show the control if the track actually exists.
-  fetch(src, { method: 'HEAD' })
-    .then(function (res) { if (res.ok) build(); })
-    .catch(function () { /* no track, no control */ });
+  // Show the control only if a track actually exists, taking the first
+  // available format in preference order.
+  (function probe(i) {
+    if (i >= TRACKS.length) return; // no track, no control
+    var src = prefix + TRACKS[i];
+    fetch(src, { method: 'HEAD' })
+      .then(function (res) { res.ok ? build(src) : probe(i + 1); })
+      .catch(function () { probe(i + 1); });
+  })(0);
 })();
