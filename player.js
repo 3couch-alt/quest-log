@@ -1,15 +1,15 @@
 (function () {
   /* Ambient audio toggle.
-     Deliberately silent and weightless until the visitor asks for it:
+     Never plays on its own. Every page load starts silent and stays that way
+     until the visitor presses the button — no autoplay, and no resuming
+     across page navigations either.
      - the <audio> element uses preload="none", so zero bytes are fetched
        until play is pressed
-     - if the track file is missing, the control never appears at all
-     - the on/off choice is remembered across pages */
+     - if the track file is missing, the control never appears at all */
 
   // mp3 first: Safari (macOS and iOS) does not play Ogg Vorbis, so an mp3
   // is preferred whenever one is present.
   var TRACKS = ['audio/lofi.mp3', 'audio/lofi.ogg'];
-  var KEY = 'ql_music_on';
   var VOLUME = 0.35;
 
   // Don't bother on the admin page.
@@ -40,30 +40,16 @@
 
     btn.addEventListener('click', function () {
       if (audio.paused) {
-        audio.play().then(function () {
-          setOn(true);
-          try { localStorage.setItem(KEY, '1'); } catch (e) {}
-        }).catch(function () {
-          setOn(false);
-        });
+        audio.play().then(function () { setOn(true); }).catch(function () { setOn(false); });
       } else {
         audio.pause();
         setOn(false);
-        try { localStorage.removeItem(KEY); } catch (e) {}
       }
     });
 
     setOn(false);
     document.body.appendChild(audio);
     document.body.appendChild(btn);
-
-    // If they had it on, try to pick back up after navigating. Browsers may
-    // refuse until the page has been interacted with; failing is fine.
-    var wanted = null;
-    try { wanted = localStorage.getItem(KEY); } catch (e) {}
-    if (wanted) {
-      audio.play().then(function () { setOn(true); }).catch(function () { setOn(false); });
-    }
   }
 
   // Show the control only if a track actually exists, taking the first
