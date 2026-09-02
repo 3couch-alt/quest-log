@@ -408,6 +408,38 @@ footer {
 .log-entry p { margin: 0; color: var(--muted); font-size: 15.5px; }
 .log-entry b { color: var(--text); }
 
+/* ---------- Roadmap chain (game page) ---------- */
+.roadmap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 6px;
+  margin: 0 0 28px;
+}
+.roadmap-step {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 6px 11px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.roadmap-step i { color: var(--muted-2); font-style: normal; }
+.roadmap-step.active {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+.roadmap-step.active i { color: var(--gold); opacity: 0.75; }
+.roadmap-arrow {
+  color: var(--muted-2);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+@media (max-width: 560px) {
+  .roadmap-step { white-space: normal; }
+}
+
 /* ---------- Releases page ---------- */
 .release-card {
   display: flex;
