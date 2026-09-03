@@ -440,6 +440,43 @@ footer {
   .roadmap-step { white-space: normal; }
 }
 
+/* ---------- Companion roster (game page) ---------- */
+.companion-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 4px 0 28px;
+}
+.companion-card {
+  flex: 1 1 150px;
+  max-width: 190px;
+  text-align: center;
+}
+.companion-card img {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 10px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  image-rendering: pixelated;
+}
+.companion-card h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 0 0 4px;
+  font-style: normal;
+}
+.companion-card p {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 0;
+}
+
 /* ---------- Releases page ---------- */
 .release-card {
   display: flex;
