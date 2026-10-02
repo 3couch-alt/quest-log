@@ -440,6 +440,34 @@ footer {
   .roadmap-step { white-space: normal; }
 }
 
+/* ---------- Print gallery (printing page) ---------- */
+.print-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin: 8px 0 32px;
+}
+.print-card { margin: 0; }
+.print-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+.print-card figcaption {
+  margin-top: 8px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.print-card figcaption b { color: var(--gold); font-weight: 600; }
+@media (max-width: 560px) {
+  .print-grid { grid-template-columns: 1fr; }
+}
+
 /* ---------- Companion roster (game page) ---------- */
 .companion-grid {
   display: flex;
