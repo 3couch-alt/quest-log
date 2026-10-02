@@ -200,6 +200,7 @@ h1.title {
 .post-body { padding-bottom: 56px; }
 .post-body p { margin: 0 0 20px; }
 
+.post-body h2[id] { scroll-margin-top: 90px; } /* clear the sticky topbar on #anchor jumps */
 .post-body h2 {
   font-family: var(--font-display);
   font-size: 21px;
@@ -464,6 +465,8 @@ footer {
   color: var(--muted);
 }
 .print-card figcaption b { color: var(--gold); font-weight: 600; }
+.print-card figcaption a { color: var(--teal); border-bottom: 1px solid var(--teal); }
+.print-card.wide img { aspect-ratio: 4 / 3; }
 @media (max-width: 560px) {
   .print-grid { grid-template-columns: 1fr; }
 }
